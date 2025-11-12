@@ -1,11 +1,14 @@
 import React from 'react';
 import ServerComponent from './_components/ServerComponent';
+import ClientComponent from './_components/ClientComponent';
 
 export default function ClientServerPage() {
   return (
     <div>
       ClientServerPage
-      <ServerComponent />
+      <ClientComponent>
+        <ServerComponent />
+      </ClientComponent>
     </div>
   );
 }
