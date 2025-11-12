@@ -5,7 +5,7 @@ import { contactSchema } from '@/validations/contactSchema';
 
 export async function updateContact(contactId: string, formData: FormData) {
   const data = Object.fromEntries(formData);
-  const result = contactSchema.parse(data);
+  const result = contactSchema.safeParse(data);
 
   await prisma.contact.update({
     data: result,
