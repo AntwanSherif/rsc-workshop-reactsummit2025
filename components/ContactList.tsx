@@ -7,7 +7,7 @@ import type { Contact } from '@prisma/client';
 
 export default function ContactList({ contacts = [] }: { contacts: Contact[] }) {
   const searchParams = useSearchParams();
-  const query = searchParams.get('') || '';
+  const query = searchParams.get('q') || '';
 
   const filteredContacts = contacts.filter(({ first, last }) => {
     const fullname = `${first} ${last}`.toLowerCase();
