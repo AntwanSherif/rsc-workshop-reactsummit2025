@@ -1,9 +1,9 @@
 import React from 'react';
-import { prisma } from '@/db';
+import { getContacts } from '@/data/services/getContacts';
 import ContactButton from './ContactButton';
 
 export default async function ContactList() {
-  const contacts = await prisma.contact.findMany();
+  const contacts = await getContacts();
 
   return (
     <nav className="flex-1 overflow-auto px-8 py-4">
