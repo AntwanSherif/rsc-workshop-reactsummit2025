@@ -5,6 +5,7 @@ import LinkButton from '@/components/ui/LinkButton';
 import TextArea from '@/components/ui/TextArea';
 import { updateContact } from '@/data/actions/updateContact';
 import { getContact } from '@/data/services/getContact';
+import SubmitButton from '@/components/ui/SubmitButton';
 
 export default async function ContactForm({ contactId }: { contactId: string }) {
   const contact = await getContact(contactId);
@@ -51,9 +52,9 @@ export default async function ContactForm({ contactId }: { contactId: string }) 
         <LinkButton theme="secondary" href={`/contacts/${contactId}`}>
           Cancel
         </LinkButton>
-        <Button theme="primary" type="submit">
+        <SubmitButton theme="primary" type="submit">
           Save
-        </Button>
+        </SubmitButton>
       </div>
     </form>
   );
